@@ -19,3 +19,6 @@ function gigaom_filter_user_roles( $roles ) {
 }
 ```
 
+For more back story on why we created this plugin and how it can be used, check out our article:
+
+[Gigaom Kitchen: Dynamically add roles to WordPress](http://kitchen.gigaom.com/2014/01/21/dynamically-add-roles-to-wordpress/)
