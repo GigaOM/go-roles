@@ -5,7 +5,7 @@ WordPress plugin to allow filterable definition of custom roles and their capabi
 
 Example of how to use this plugin to extend role definitions without adding them to the database:
 
-```
+```php
 add_filter( 'go_roles', 'gigaom_filter_user_roles' );
 function gigaom_filter_user_roles( $roles ) {
     $roles['subscriber-lifetime'] => array(
