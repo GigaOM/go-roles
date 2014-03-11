@@ -6,11 +6,9 @@ Tested up to: 3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Utility WP plugin for importing/exporting widget configuration
+Utility plugin to allow filterable definition of custom roles and their capabilities.
 
 == Description ==
-
-WordPress plugin to allow filterable definition of custom roles and their capabilities.  
 
 This plugin provides a framework for allowing filterable definition of your own roles.  
 This will require code to be written in order for this plugin to show any new functionality.
