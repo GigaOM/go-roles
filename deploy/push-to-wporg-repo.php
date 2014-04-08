@@ -4,7 +4,7 @@
 if ( 'cli' != php_sapi_name() )
 {
 	die;
-}
+}//end if
 
 // main config
 $pluginslug = 'go-roles';
