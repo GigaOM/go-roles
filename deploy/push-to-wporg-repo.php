@@ -8,9 +8,12 @@ if ( 'cli' != php_sapi_name() )
 
 // main config
 $pluginslug = 'go-roles';
-$svn_repo_path= '/tmp/'. $pluginslug; // path to a temp SVN repo. No trailing slash (be cautious about incorrect paths, note that we rm the contents later)
-$svn_repo_url = 'http://plugins.svn.wordpress.org/' . $pluginslug . '/trunk/'; // Remote SVN repo with no trailing slash
-$svn_ignore_files = array( // paths relative to the top of the svn_repo_path
+// path to a temp SVN repo. No trailing slash (be cautious about incorrect paths, note that we rm the contents later)
+$svn_repo_path = '/tmp/' . $pluginslug;
+// Remote SVN repo with no trailing slash
+$svn_repo_url = 'http://plugins.svn.wordpress.org/' . $pluginslug . '/trunk/';
+// paths relative to the top of the svn_repo_path
+$svn_ignore_files = array(
 	'README.md',
 	'.git',
 	'.gitignore',
@@ -75,7 +78,7 @@ Now forcibly removing the files that are supposed to be ignored in the svn repo
 foreach( $svn_ignore_files as $file )
 {
 	passthru( "svn rm --force $svn_repo_path/$file" );
-}
+}// end foreach
 
 echo '
 Removing any svn:executable properties for security
