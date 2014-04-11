@@ -36,7 +36,6 @@ Creating local copy of SVN repo at $svn_repo_path
 ";
 passthru( "svn checkout $svn_repo_url $svn_repo_path" );
 
-
 echo '
 Prepping the SVN repo to receive the git
 ';
@@ -46,7 +45,6 @@ echo '
 Exporting the HEAD of master from git to SVN
 ';
 passthru( "git checkout-index -a -f --prefix=$svn_repo_path/" );
-
 
 echo '
 Exporting git submodules to SVN
@@ -75,7 +73,7 @@ passthru( "svn st $svn_repo_path | grep '^\?' | sed 's/\?\s*//g' | xargs svn add
 echo '
 Now forcibly removing the files that are supposed to be ignored in the svn repo
 ';
-foreach( $svn_ignore_files as $file )
+foreach ( $svn_ignore_files as $file )
 {
 	passthru( "svn rm --force $svn_repo_path/$file" );
 }// end foreach
@@ -84,7 +82,6 @@ echo '
 Removing any svn:executable properties for security
 ';
 passthru( "find $svn_repo_path -type f -not -iwholename *svn* -exec svn propdel svn:executable {} \; | grep 'deleted from'" );
-
 
 echo "
 Automatic processes complete!
