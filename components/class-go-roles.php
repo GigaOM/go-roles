@@ -16,7 +16,7 @@ class GO_Roles
 	/**
 	 * Hooked to the option_user_roles filter
 	 *
-	 * @param array $base_roles default to array, baseline WordPress roles array
+	 * @param array $base_roles default to array, WordPress roles array
 	 */
 	public function option_user_roles( $base_roles = array() )
 	{
