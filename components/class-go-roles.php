@@ -15,6 +15,8 @@ class GO_Roles
 
 	/**
 	 * Hooked to the option_user_roles filter
+	 *
+	 * @param array $base_roles default to array, WordPress roles array
 	 */
 	public function option_user_roles( $base_roles = array() )
 	{
@@ -31,7 +33,8 @@ class GO_Roles
 	/**
 	 * add custom roles to the baseline WordPress roles
 	 *
-	 * @param array baseline WordPress roles array
+	 * @param array $base_roles baseline WordPress roles array
+	 * @return array $base_roles
 	 */
 	private function extend_roles( $base_roles )
 	{
@@ -104,6 +107,9 @@ class GO_Roles
 
 /**
  * Singleton
+ *
+ * @global GO_Roles $go_roles
+ * @return GO_Roles
  */
 function go_roles()
 {
